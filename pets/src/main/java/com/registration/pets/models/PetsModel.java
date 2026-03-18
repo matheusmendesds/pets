@@ -16,13 +16,17 @@ public class PetsModel extends RepresentationModel<PetsModel> implements Seriali
     private UUID idPets;
     private String name;
     private String lastName;
-    private enum Sex {
+    private String city;
+    private String adress;
+    public enum Sex {
         MACHO,FEMEA
     };
-    private PetsAdress petsAdress;
-    private double weight;
-    private double age;
-    private String city;
+
+    private Double weight;
+    private Double age;
+    private String type;
+    @Enumerated(EnumType.STRING)
+    private Sex sex;
 
     public UUID getIdPets() {
         return idPets;
@@ -48,28 +52,12 @@ public class PetsModel extends RepresentationModel<PetsModel> implements Seriali
         this.lastName = lastName;
     }
 
-    public PetsAdress getPetsAdress() {
-        return petsAdress;
+    public String getType() {
+        return type;
     }
 
-    public void setPetsAdress(PetsAdress petsAdress) {
-        this.petsAdress = petsAdress;
-    }
-
-    public double getWeight() {
-        return weight;
-    }
-
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
-
-    public double getAge() {
-        return age;
-    }
-
-    public void setAge(double age) {
-        this.age = age;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getCity() {
@@ -78,5 +66,37 @@ public class PetsModel extends RepresentationModel<PetsModel> implements Seriali
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public String getAdress() {
+        return adress;
+    }
+
+    public void setAdress(String adress) {
+        this.adress = adress;
+    }
+
+    public Double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Double weight) {
+        this.weight = weight;
+    }
+
+    public Double getAge() {
+        return age;
+    }
+
+    public void setAge(Double age) {
+        this.age = age;
+    }
+
+    public Sex getSex() {
+        return sex;
+    }
+
+    public void setSex(Sex sex) {
+        this.sex = sex;
     }
 }
